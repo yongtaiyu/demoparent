@@ -31,5 +31,6 @@
 	<modules>
 		<module>rocketmq</module>
         <module>email</module>
-    </modules>
+    <module>xstream</module>
+  </modules>
 </project>
