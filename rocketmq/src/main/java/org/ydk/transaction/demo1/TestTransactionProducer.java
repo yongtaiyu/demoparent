@@ -20,7 +20,7 @@ public class TestTransactionProducer {
         //MQ服务器地址
         producer.setNamesrvAddr("192.168.3.6:9876;192.168.3.7:9876");
         //注册事务回查监听
-        producer.setTransactionCheckListener(checkListener);
+        producer.setTransactionListener(checkListener);
         //本地事务执行器
         TransactionExecuterimpl executerimpl = null;
         try {
@@ -30,10 +30,10 @@ public class TestTransactionProducer {
             Message msg1 = new Message("TransactionTopic", "tag", "KEY1", "hello RocketMQ 1".getBytes());
             Message msg2 = new Message("TransactionTopic", "tag", "KEY2", "hello RocketMQ 2".getBytes());
 
-            SendResult sendResult = producer.sendMessageInTransaction(msg1, executerimpl, null);
+            SendResult sendResult = producer.sendMessageInTransaction(msg1, executerimpl);
             System.out.println(new Date() + " 【msg1】 "+sendResult);
 
-            sendResult = producer.sendMessageInTransaction(msg2, executerimpl, null);
+            sendResult = producer.sendMessageInTransaction(msg2, executerimpl);
             System.out.println(new Date() + " 【msg2】 "+sendResult);
 
         } catch (MQClientException e) {

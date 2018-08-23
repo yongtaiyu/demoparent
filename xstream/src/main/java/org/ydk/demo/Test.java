@@ -16,6 +16,8 @@ public class Test {
 	{
 		Person bean=new Person("张三",19);
 		XStream xstream = new XStream();
+		xstream.setupDefaultSecurity(xstream);
+		xstream.allowTypes(new Class[]{Person.class});
 		//XML序列化
 		String xml = xstream.toXML(bean);
 		System.out.println(xml);
@@ -23,14 +25,14 @@ public class Test {
 		bean=(Person)xstream.fromXML(xml);
 		System.out.println(bean);
 		
-		xstream = new XStream(new JettisonMappedXmlDriver());
+		/*xstream = new XStream(new JettisonMappedXmlDriver());
 		xstream.setMode(XStream.NO_REFERENCES);
 		//Json序列化
 		String json=xstream.toXML(bean);
 		System.out.println(json);
 		//Json反序列
 		bean=(Person)xstream.fromXML(json);
-		System.out.println(bean);
+		System.out.println(bean);*/
 	}
 	/**
 	 * (1)Xstream序列化XML

@@ -1,15 +1,15 @@
 package org.ydk.transaction.demo1;
 
 import org.apache.rocketmq.client.producer.LocalTransactionState;
+import org.apache.rocketmq.client.producer.TransactionListener;
+import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.common.message.MessageExt;
-
-import com.alibaba.rocketmq.client.producer.TransactionCheckListener;
 
 /**
  * @Date: Created in  2018/2/12 15:48
  * 未决事务，服务器端回查客户端
  */
-public class TransactionCheckListenerImpl implements TransactionCheckListener {
+public class TransactionCheckListenerImpl implements TransactionListener {
     public LocalTransactionState checkLocalTransactionState(MessageExt messageExt) {
 
         System.out.println("服务器端回查事务消息： "+messageExt.toString());
@@ -18,4 +18,14 @@ public class TransactionCheckListenerImpl implements TransactionCheckListener {
 
         return LocalTransactionState.COMMIT_MESSAGE;
     }
+
+	public LocalTransactionState checkLocalTransaction(MessageExt arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public LocalTransactionState executeLocalTransaction(Message arg0, Object arg1) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
