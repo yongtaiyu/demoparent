@@ -33,5 +33,6 @@
         <module>email</module>
         <module>xstream</module>
 	    <module>quartz</module>
+		<module>json</module>
     </modules>
 </project>
