@@ -12,17 +12,28 @@
 	<name>rocketmq</name>
 	<url>http://maven.apache.org</url>
 
+	<properties>
+		<rocketmq.version>4.3.0</rocketmq.version>
+		<fastjson.version>1.2.29</fastjson.version>
+	</properties>
+
 	<dependencies>
 		<!-- Rocket MQ 依赖包 -->
 		<dependency>
 			<groupId>org.apache.rocketmq</groupId>
 			<artifactId>rocketmq-client</artifactId>
-			<version>4.3.0</version>
+			<version>${rocketmq.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.rocketmq</groupId>
+			<artifactId>rocketmq-all</artifactId>
+			<version>${rocketmq.version}</version>
+			<type>pom</type>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.2.29</version>
+			<version>${fastjson.version}</version>
 		</dependency>
 	</dependencies>
 </project>

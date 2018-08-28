@@ -1,5 +1,6 @@
 package org.ydk.trans;
 
+import org.apache.rocketmq.common.consumer.ConsumeFromWhere;
 import org.ydk.demo1.RocketMQConsumer;
 
 /**
@@ -14,6 +15,7 @@ public class RocketMQConsumerTest {
 		String consumerMqGroupName = "CONSUMER-MQ-GROUP-TRANSTEST";
 		RocketMQListener mqListener = new RocketMQListener();
 		RocketMQConsumer mqConsumer = new RocketMQConsumer(mqListener, mqNameServer, consumerMqGroupName, mqTopics);
+		
 		mqConsumer.init();
 		try {
 			Thread.sleep(1000 * 60L);
