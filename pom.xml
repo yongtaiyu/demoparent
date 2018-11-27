@@ -2,15 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.ydk</groupId>
-	<artifactId>mavenparent</artifactId>
+	<groupId>com.internet</groupId>
+	<artifactId>projectparent</artifactId>
 	<packaging>pom</packaging>
-	<version>1.0-SNAPSHOT</version>
-	<name>mavenparent</name>
+	<version>1.0.0</version>
+	<name>projectparent</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
+	   
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		 <osmp.version>1.0.0</osmp.version>
+		<jetty.version>8.1.16.v20140903</jetty.version>
+		<jersey.version>2.9</jersey.version>
+		<spring.version>4.0.1.RELEASE</spring.version>
 	</properties>
 
 	<dependencies>
@@ -27,14 +32,13 @@
 			<version>4.0.1</version>
 			<scope>provided</scope>
 		</dependency>
+		
+
 	</dependencies>
 
 	<modules>
-		<module>rocketmq</module>
-		<module>email</module>
-		<module>xstream</module>
-		<module>quartz</module>
-		<module>json</module>
+		<module>ydk</module>
+	    <module>yweb</module>
 	</modules>
 
 	<build>
